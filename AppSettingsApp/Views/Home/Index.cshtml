@@ -1,0 +1,17 @@
+﻿@model AppSettingsApp.Models.vmHome
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*This two lines are required to read AppSettngs value*@
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <p> View-side: @Configuration["ApplicationSettings:AppName"]</p>
+    <p> Server-side: @Model.HomeAppName</p>
+
+</div>
